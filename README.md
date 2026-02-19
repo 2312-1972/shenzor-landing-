@@ -88,3 +88,7 @@ shenzor-landing/
 Shenzor LLC
 📧 Contact: https://portfolio-frederic-toppan.vercel.app/contact/
 🌐 Portfolio: https://portfolio-frederic-toppan.vercel.app/
+
+📄 License / Licence
+This project is for professional use. All rights reserved © Shenzor LLC.
+Ce projet est destiné à un usage professionnel. Tous droits réservés © Shenzor LLC.
