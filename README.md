@@ -30,7 +30,7 @@ This landing page is designed to:
 
 - HTML / CSS (static landing)  
 - Or React (Create React App) version  
-- Deployed on **Vercel**  
+- Deployed on **Netlify**  
 - GitHub for version control
 
 ## 📁 Project Structure
