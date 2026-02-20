@@ -10,6 +10,15 @@
       content="Shenzor LLC — Software development & consulting services. We build reliable web apps, automation, and integrations."
     />
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://shenzor-landing.netlify.app/" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index,follow" />
+
+    <!-- Theme color (mobile UI) -->
+    <meta name="theme-color" content="#070A0F" />
+
     <!-- Open Graph -->
     <meta property="og:title" content="Shenzor LLC — Software development & consulting services" />
     <meta
@@ -17,10 +26,15 @@
       content="Shenzor LLC — Software development & consulting services. Web apps, automation, integrations."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shenzor-landing.netlify.app/" />
 
-    <!-- Basic SEO -->
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://YOUR-DOMAIN.com/" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Shenzor LLC — Software development & consulting services" />
+    <meta
+      name="twitter:description"
+      content="Shenzor LLC — Software development & consulting services. Web apps, automation, integrations."
+    />
 
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -28,7 +42,15 @@
   <body>
     <main class="wrap">
       <section class="card" aria-label="Shenzor LLC landing page">
-        <div class="badge">Shenzor LLC</div>
+        <div class="topbar">
+          <div class="badge">Shenzor LLC</div>
+
+          <!-- Theme toggle -->
+          <button class="themeToggle" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span class="themeLabel" id="themeLabel">Dark</span>
+          </button>
+        </div>
 
         <h1>Software development & consulting services</h1>
 
@@ -38,7 +60,9 @@
         </p>
 
         <div class="cta">
-          <a class="btn primary" href="https://portfolio-frederic-toppan.vercel.app/contact/">Contact</a>
+          <!-- Reco Mercury: email direct (plus "company-like") -->
+          <a class="btn primary" href="mailto:shenzorllc@gmail.com">Contact</a>
+
           <a class="btn ghost" href="https://portfolio-frederic-toppan.vercel.app/" target="_blank" rel="noreferrer">
             View portfolio
           </a>
@@ -54,13 +78,46 @@
         <footer class="footer">
           <span>© <span id="y"></span> Shenzor LLC</span>
           <span class="dot">•</span>
-          <a href="https://portfolio-frederic-toppan.vercel.app/contact/" target="_blank" rel="noreferrer">contact</a>
+          <a href="mailto:shenzorllc@gmail.com?subject=Inquiry%20-%20Shenzor%20LLC&body=Hello%20Shenzor%20LLC,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20about...">
+  shenzorllc@gmail.com
+</a>
+
         </footer>
       </section>
     </main>
 
     <script>
+      // year
       document.getElementById("y").textContent = new Date().getFullYear();
+
+      // theme: default = system, but persist user choice
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+      const icon = document.getElementById("themeIcon");
+      const label = document.getElementById("themeLabel");
+
+      function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        const isLight = theme === "light";
+        icon.textContent = isLight ? "☀️" : "🌙";
+        label.textContent = isLight ? "Light" : "Dark";
+      }
+
+      const saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") {
+        applyTheme(saved);
+      } else {
+        // default to system preference
+        const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+        applyTheme(prefersLight ? "light" : "dark");
+      }
+
+      btn.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") || "dark";
+        const next = current === "dark" ? "light" : "dark";
+        localStorage.setItem("theme", next);
+        applyTheme(next);
+      });
     </script>
   </body>
 </html>

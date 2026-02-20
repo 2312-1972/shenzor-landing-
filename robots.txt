@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shenzor-landing.netlify.app/sitemap.xml
