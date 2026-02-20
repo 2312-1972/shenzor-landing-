@@ -46,7 +46,7 @@ shenzor-landing/
 
 📩 Contact
 Shenzor LLC
-📧 Contact: https://portfolio-frederic-toppan.vercel.app/contact/
+📧 Contact:   shenzorllc@gmail.com
 🌐 Portfolio: https://portfolio-frederic-toppan.vercel.app/
 
 🇫🇷 Français
@@ -86,7 +86,7 @@ shenzor-landing/
 
  📩 Contact
 Shenzor LLC
-📧 Contact: https://portfolio-frederic-toppan.vercel.app/contact/
+📧 Contact:   shenzorllc@gmail.com
 🌐 Portfolio: https://portfolio-frederic-toppan.vercel.app/
 
 📄 License / Licence
